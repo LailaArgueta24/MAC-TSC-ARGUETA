@@ -10,47 +10,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.TiendaUno.Model.Products;
-import com.example.TiendaUno.Service.ProductService;
+import com.example.TiendaUno.Model.Producto;
+import com.example.TiendaUno.Service.ProductoService;
 
 
 @RestController
 @RequestMapping("/tienda/productos")
-public class ProductsController {
+public class ProductoController {
 
-    private final ProductService service;
+    private final ProductoService service;
 
-    public ProductsController(ProductService service) {
+    public ProductoController(ProductoService service) {
         this.service = service;
     }
 
     // GET todos
     @GetMapping
-    public List<Products> listarTodos() {
+    public List<Producto> listarTodos() {
         return service.obtenerTodos();
     }
 
     // GET por id
     @GetMapping("/{id}")
-    public Products obtener(@PathVariable int id) {
+    public Producto obtener(@PathVariable int id) {
         return service.obtenerPorId(id).orElseThrow();
     }
 
     // POST crear
     @PostMapping
-    public Products crear(@RequestBody Products producto) {
+    public Producto crear(@RequestBody Producto producto) {
         return service.guardar(producto);
     }
     // Crear varios productos
     @PostMapping("/lote")
-    public List<Products> crearLote(@RequestBody List<Products> productos) {
+    public List<Producto> crearLote(@RequestBody List<Producto> productos) {
         return service.guardarTodos(productos);
     }
 
     // PUT actualizar
     @PutMapping("/{id}")
-    public Products actualizar(@PathVariable("id") int idProducto,
-                               @RequestBody Products producto) {
+    public Producto actualizar(@PathVariable("id") int idProducto,
+                               @RequestBody Producto producto) {
         return service.actualizar(idProducto, producto);
     }
 
