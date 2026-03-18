@@ -1,8 +1,6 @@
 package com.example.TiendaUno.Service;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.stereotype.Service;
 
 import com.example.TiendaUno.Model.Products;
@@ -21,8 +19,8 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public Optional<Products> obtenerPorId(int idProducto) {
-        return repository.findById(idProducto);
+    public Products obtenerPorId(int idProducto) {
+        return repository.findByIdProducto(idProducto);
     }
 
     public Products guardar(Products producto) {
@@ -34,13 +32,13 @@ public class ProductService {
     }
 
     public Products actualizar(int idProducto, Products productoActualizado) {
-        Products producto = repository.findById(idProducto).orElseThrow();
+        Products producto = repository.findByIdProducto(idProducto).orElseThrow();
         producto.setNameProduct(productoActualizado.getNameProduct());
         producto.setPrice(productoActualizado.getPrice());
         producto.setStock(productoActualizado.getStock());
         return repository.save(producto);
     }
     public void eliminar(int idProducto) {
-        repository.deleteById(idProducto);
+        repository.deleteByIdProduct(idProducto);
     }
 }
