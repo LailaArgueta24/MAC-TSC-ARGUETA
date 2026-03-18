@@ -1,8 +1,18 @@
 package com.example.TiendaUno.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
 import com.example.TiendaUno.Model.Products;
 
-public interface ProductRepository extends JpaRepository<Products, Integer> {
+public interface ProductRepository {
+
+    List<Products> findAll();
+
+    Products findByIdProducto(int idProducto);
+
+    Products save(Products producto);
+
+    List<Products> saveAll(Iterable<Products> productos);
+
+    void deleteByIdProduct(int idProducto);
 }
