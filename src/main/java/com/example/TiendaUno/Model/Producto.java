@@ -21,7 +21,7 @@ public class Producto {
     @Column(name = "CNOMBRE", length = 200, nullable = false)
     private String nombre;
 
-    @Column(name = "DESCRIPCION")
+    @Column(name = "CDESCRIPCION")
     private String descripcion;
 
     @Column(name = "MPRECIO", precision = 10, scale = 2)

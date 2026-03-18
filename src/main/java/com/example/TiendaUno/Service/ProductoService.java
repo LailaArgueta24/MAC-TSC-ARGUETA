@@ -10,7 +10,7 @@ import com.example.TiendaUno.Repository.ProductoRepository;
 
 @Service
 public class ProductoService {
-
+    // @Autowired
     private final ProductoRepository repository;
 
     public ProductoService(ProductoRepository repository) {

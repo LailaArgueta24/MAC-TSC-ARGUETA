@@ -24,9 +24,9 @@ public class Inventario {
     @JoinColumn(name = "NID_PRODUCTO")
     private Producto producto;
 
-    @ManyToOne
-    @JoinColumn(name = "NID_ALMACEN")
-    private Almacen almacen;
+    // @ManyToOne
+    // @JoinColumn(name = "NID_ALMACEN")
+    // private Almacen almacen;
 
     @Column(name = "NSTOCK")
     private Integer stock;
@@ -58,13 +58,13 @@ public class Inventario {
         this.producto = producto;
     }
 
-    public Almacen getAlmacen() {
-        return almacen;
-    }
+    // public Almacen getAlmacen() {
+    //     return almacen;
+    // }
 
-    public void setAlmacen(Almacen almacen) {
-        this.almacen = almacen;
-    }
+    // public void setAlmacen(Almacen almacen) {
+    //     this.almacen = almacen;
+    // }
 
     public Integer getnStock() {
         return stock;
