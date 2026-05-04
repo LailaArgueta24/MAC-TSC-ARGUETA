@@ -1,9 +1,11 @@
 import { useState } from "react";
+import PrimerComponente from "./components/primerComponente.jsx";
+import Fruit from "./components/Fruit.jsx";
 function App() {
+  const [fruits, setFruits] = useState(["Apple", "Banana", "Orange"]);
   return (
     <div>
-      <h1>Hola Mundo en React</h1>
-      <p>Prueba 1 akari</p>
+      <Fruit fruits={fruits}></Fruit>
     </div>
   );
 }
